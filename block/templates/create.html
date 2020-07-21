@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'create' %}" method="post">
+    {% csrf_token %}
+    <label for=""></label><input type="text" name="organization"><br>
+    <label for=""><input type="text" name="name"><br>
+    <label for=""><input type="date" name="date"><br>
+    <label for=""><input type="date" name="first_period"><br>
+    <label for=""><input type="date"name="second_period"><br>
+    <label for=""><input type="number" name="iin"><br>
+    <label for=""><input type="password" name="password"><br>
+        <button type="submit">Start</button>
+</form>
+{% if e %}
+Данные сохранены
+{% else %}
+Неверный пароль
+{% endif %}
+
+</body>
+</html>

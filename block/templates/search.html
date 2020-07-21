@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="{% url 'search' %}" method="get">
+<label for="">Search <input type="text" name="q"></label>
+    <button type="submit">Start</button>
+</form>
+{% if people %}
+Results({{count}})<br>
+{% for p in people %}
+{{p.name}}
+{% endfor %}
+{% endif %}
+</body>
+</html>
